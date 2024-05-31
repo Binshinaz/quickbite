@@ -22,12 +22,8 @@ class _HomePageState extends State<HomePage> {
   // List<bool>taped=List.generate(6, (index) => false);
 
   int _selectedIndex = -1;
-  bool checkbox1=false;
-  bool checkbox2=false;
-  bool checkbox3=false;
-  bool checkbox4=false;
-  bool checkbox5=false;
-  bool checkbox6=false;
+  bool checkbox=false;
+
   int count=0;
   List bin=[{
   "pic":"assets/images/fillet.png",
@@ -104,6 +100,12 @@ class _HomePageState extends State<HomePage> {
     },
 
   ];
+  bool checkbox1=false;
+  bool checkbox2=false;
+  bool checkbox3=false;
+  bool checkbox4=false;
+  bool checkbox5=false;
+  bool checkbox6=false;
     List images = [
         "assets/images/food1.png",
         "assets/images/food2.png",
@@ -473,391 +475,490 @@ body: Stack(
               shrinkWrap: true,
               itemBuilder: (BuildContext, int index) {
                 return
-                  SingleChildScrollView(
-                    child: InkWell(
-                      onTap: (){
-                        showModalBottomSheet(context: context,
-                            isScrollControlled: true,
-                            builder: (context) {
-                             return SingleChildScrollView(
-                               child: Container(
-                                  height: width*1.6,
+                  InkWell(
+                    onTap: (){
+                      showModalBottomSheet(context: context,
+                          isScrollControlled: true,
+                          builder: (context) {
+                           return StatefulBuilder(
+                             builder: (context, setState) {
+                               return Container(
+                                 height: width*1.6,
                                  width: width*1,
-                                 child: Column(
-                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                     Padding(
-                                       padding:  EdgeInsets.all(width*0.05),
-                                       child: Row(
-                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                         crossAxisAlignment: CrossAxisAlignment.start,
-                                         children: [
-                                           Container(
-                                             height: width*0.3,
-                                             width: width*0.3,
-                                             decoration: BoxDecoration(
-                                               borderRadius: BorderRadius.circular(width*0.05),
-                                             ),
-                                             child: Image.asset(abc[index]["image"],fit: BoxFit.fill,),
-                                             // color: Colors.red,
-                                           ),
-                                           Column(
-                                             crossAxisAlignment: CrossAxisAlignment.start,
-                                             mainAxisAlignment: MainAxisAlignment.start,
-                                             children: [
-                                               Text(abc[index]["name"],
-                                               style: TextStyle(
-                                                 fontSize: width*0.05,
-                                                 fontWeight: FontWeight.w700
-                                               ),),
-                                               Row(
-                                                 children: [
-                                                   Container(
-                                                     height:width*0.03,
-                                                       width: width*0.03,
-                                                       child: SvgPicture.asset(imagePage.ystar1)),
-                                                   Text(abc[index]["star"],
-                                                   style: TextStyle(
-                                                     fontWeight: FontWeight.w600
-                                                   ),)
-                                                 ],
-                                               ),
-                                               Text(abc[index]["des"],
-                                               style: TextStyle(
-                                                 fontSize: width*0.04,
-                                                 color: colorPage.seventhColor
-                                                 // fontWeight: FontWeight.w600
-                                               ),),
-                                               Text(abc[index]["price"],
-                                               style: TextStyle(
-                                                 color: colorPage.primaryColor,
-                                                 fontWeight: FontWeight.w700,
-                                                 fontSize: width*0.06
-                                               ),)
-                                             ],
-                                           ),
-                                            GestureDetector(
-                                              onTap: (){
-                                                if(save.contains(index)){
-                                                  save.remove(index);
-                                                }
-                                                else{
-                                                  save.add(index);
-                                                }
-                                                setState(() {
-                                                  taped[index]=!taped[index];
-                                                }
-                                                );
-                                              },
-                                              child: Container(
-                                                height:width*0.03,
-                                                width:width*0.03,
-                                                decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                image: AssetImage(!taped[index]?imagePage.greyheart1:imagePage.redheart1),
-                                              ),
-
-
-                                            )))],
-                                       ),
-                                     ),
-                                     Padding(
-                                       padding: EdgeInsets.only(left:width*0.09),
-                                       child: Row(
-                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                         children: [
-                                           Text("Quantity",style: TextStyle(
-fontWeight: FontWeight.w500,
-                                             fontSize: width*0.05
-                                           ),),
-                                           Container(
-                                             height: width*0.09,
-                                             width: width*0.2,
-                                             decoration: BoxDecoration(
-                                               color: Colors.grey,
+                                 child: SingleChildScrollView(
+                                   child: Column(
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+                                       Padding(
+                                         padding:  EdgeInsets.all(width*0.05),
+                                         child: Row(
+                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                           crossAxisAlignment: CrossAxisAlignment.start,
+                                           children: [
+                                             Container(
+                                               height: width*0.3,
+                                               width: width*0.3,
+                                               decoration: BoxDecoration(
                                                  borderRadius: BorderRadius.circular(width*0.05),
-                                                 border: Border.all(
-                                                     color: Colors.black
-                                                 )
+                                               ),
+                                               child: Image.asset(abc[index]["image"],fit: BoxFit.fill,),
+                                               // color: Colors.red,
                                              ),
-                                             child: Row(
-                                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                             Column(
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                               mainAxisAlignment: MainAxisAlignment.start,
                                                children: [
-                                                 InkWell(
-                                                   onTap: (){
-                                                     count++;
-                                                     setState(() {
-
-                                                     });
-
-                                                   },
-                                                   child: Icon(Icons.add,color: Colors.black,),
-                                                 ),
-                                                 Text('$count'.toString(),
+                                                 Text(abc[index]["name"],
                                                    style: TextStyle(
-                                                       color: Colors.black
+                                                       fontSize: width*0.06,
+                                                       fontWeight: FontWeight.w700
                                                    ),),
-                                                 InkWell(
-                                                   onTap: (){
-                                                     count<=0? 0:count--;
-                                                     setState(() {
-
-                                                     });
-
-                                                   },
-                                                   child: Icon(Icons.remove,color: Colors.black,
-                                                   ),
+                                                 Row(
+                                                   children: [
+                                                     Container(
+                                                         height:width*0.03,
+                                                         width: width*0.03,
+                                                         child: SvgPicture.asset(imagePage.ystar1)),
+                                                     Text(abc[index]["star"],
+                                                       style: TextStyle(
+                                                           fontWeight: FontWeight.w600
+                                                       ),)
+                                                   ],
                                                  ),
+                                                 Text(abc[index]["des"],
+                                                   style: TextStyle(
+                                                       fontSize: width*0.04,
+                                                       color: colorPage.seventhColor
+                                                     // fontWeight: FontWeight.w600
+                                                   ),),
+                                                 Text(abc[index]["price"],
+                                                   style: TextStyle(
+                                                       color: colorPage.primaryColor,
+                                                       fontWeight: FontWeight.w700,
+                                                       fontSize: width*0.06
+                                                   ),)
                                                ],
                                              ),
-                                           ),
-//
-                                     ]  ),
-                                     ),
-                                     Padding(
-                                       padding:  EdgeInsets.only(left:width*0.09),
-                                       child: Column(
-                                         crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                         children: [
-                                           Text("Meal Size",
-                                             style: TextStyle(
-                                                 fontWeight: FontWeight.w500,
-                                                 fontSize: width*0.05
-                                             ),),
-                                          Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text("Go Medium (+3 QR)",
-                                              style: TextStyle(
-                                                color: colorPage.seventhColor
-                                              ),),
-                              Checkbox(
-  value: checkbox1,
-  onChanged: (value) {
-    setState(() {
-      checkbox1=value!;
-    });
-
-  },
-  activeColor: colorPage.primaryColor,
-  side: BorderSide(
-      color: colorPage.primaryColor
-
-  ),
-),
-
-                                            ],
-                                          ),
-                                           Row(
-                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                             children: [
-                                               Text("Go Large (+5 QR)",
-                                                 style: TextStyle(
-                                                     color: colorPage.seventhColor
-                                                 ),),
-                                               Checkbox(
-                                                 value: checkbox2,
-                                                 onChanged: (value) {
+                                             GestureDetector(
+                                                 onTap: (){
+                                                   if(save.contains(index)){
+                                                     save.remove(index);
+                                                   }
+                                                   else{
+                                                     save.add(index);
+                                                   }
                                                    setState(() {
-                                                     checkbox2=value!;
-                                                   });
-
+                                                     taped[index]=!taped[index];
+                                                   }
+                                                   );
                                                  },
-                                                 activeColor: colorPage.primaryColor,
-                                                 side: BorderSide(
-                                                     color: colorPage.primaryColor
+                                                 child: Container(
+                                                     height:width*0.03,
+                                                     width:width*0.03,
+                                                     decoration: BoxDecoration(
+                                                       image: DecorationImage(
+                                                         image: AssetImage(!taped[index]?imagePage.greyheart1:imagePage.redheart1),
+                                                       ),
 
-                                                 ),
-                                               ),
 
-                                             ],
-                                           ),
-                                           Text("Your choices of fries",
-                                             style: TextStyle(
-                                                 fontWeight: FontWeight.w500,
-                                                 fontSize: width*0.05
-                                             ),),
-                                           Row(
-                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                     )))],
+                                         ),
+                                       ),
+                                       Padding(
+                                         padding: EdgeInsets.only(left:width*0.09),
+                                         child: Row(
+                                             // mainAxisAlignment: MainAxisAlignment.,
                                              children: [
-                                               Text("Add herbs to fries (+3 QR)",
-                                                 style: TextStyle(
-                                                     color: colorPage.seventhColor
-                                                 ),),
-                                               Checkbox(
-                                                 value: checkbox3,
-                                                 onChanged: (value) {
-                                                   setState(() {
-                                                     checkbox3=value!;
-                                                   });
-
-                                                 },
-                                                 activeColor: colorPage.primaryColor,
-                                                 side: BorderSide(
-                                                     color: colorPage.primaryColor
-
+                                               Text("Quantity",style: TextStyle(
+                                                   fontWeight: FontWeight.w500,
+                                                   fontSize: width*0.05
+                                               ),),
+                                               SizedBox(width: width*0.4,),
+                                               Container(
+                                                 height: width*0.09,
+                                                 width: width*0.2,
+                                                 decoration: BoxDecoration(
+                                                     color: colorPage.ninethColor,
+                                                     borderRadius: BorderRadius.circular(width*0.05),
+                                                     border: Border.all(
+                                                         color: colorPage.ninethColor
+                                                     )
                                                  ),
-                                               ),
+                                                 child: Row(
+                                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                   children: [
+                                                     InkWell(
+                                                       onTap: (){
+                                                         count++;
+                                                         setState(() {
 
-                                             ],
+                                                         });
 
-                                           ),
-                                           Row(
-                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                             children: [
-                                               Text("Add more Cheese to fries (+2 QR)",
-                                                 style: TextStyle(
-                                                     color: colorPage.seventhColor
-                                                 ),),
-                                               Checkbox(
-                                                 value: checkbox4,
-                                                 onChanged: (value) {
-                                                   setState(() {
-                                                     checkbox4=value!;
-                                                   });
-
-                                                 },
-                                                 activeColor: colorPage.primaryColor,
-                                                 side: BorderSide(
-                                                     color: colorPage.primaryColor
-
-                                                 ),
-                                               ),
-
-                                             ],
-                                           ),
-                                           Text("Your choices of drink",
-                                             style: TextStyle(
-                                                 fontWeight: FontWeight.w500,
-                                                 fontSize: width*0.05
-                                             ),),
-                                           Row(
-                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                             children: [
-                                               Text("Kinza Lemon",
-                                                 style: TextStyle(
-                                                     color: colorPage.seventhColor
-                                                 ),),
-                                               Checkbox(
-                                                 value: checkbox5,
-                                                 onChanged: (value) {
-                                                   setState(() {
-                                                     checkbox5=value!;
-                                                   });
-
-                                                 },
-                                                 activeColor: colorPage.primaryColor,
-                                                 side: BorderSide(
-                                                     color: colorPage.primaryColor
-
-                                                 ),
-                                               ),
-
-                                             ],
-
-                                           ),
-                                           Row(
-                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                             children: [
-                                               Text("Kinza Orange",
-                                                 style: TextStyle(
-                                                     color: colorPage.seventhColor
-                                                 ),),
-                                               Checkbox(
-                                                 value: checkbox6,
-                                                 onChanged: (value) {
-                                                   setState(() {
-                                                     checkbox6=value!;
-                                                   });
-
-                                                 },
-                                                 activeColor: colorPage.primaryColor,
-                                                 side: BorderSide(
-                                                     color: colorPage.primaryColor
-
-                                                 ),
-                                               ),
-
-                                             ],
-                                           ),
-                                           Center(
-                                             child: Container(height: width*0.086,
-                                             width: width*0.7,
-                                             decoration: BoxDecoration(
-                                               color: colorPage.primaryColor,
-                                               borderRadius: BorderRadius.circular(width*0.02)
-                                             ),
-                                               child: Row(
-                                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                 children: [
-                                                   Text("TOTAL:23QR",
-                                                   style: TextStyle(
-                                                     color: colorPage.secondaryColor,
-                                                     fontWeight: FontWeight.w600
-                                                   ),),
-                                                   Text("ADD TO CART",
-                                                     style: TextStyle(
-                                                         color: colorPage.secondaryColor,
-                                                         fontWeight: FontWeight.w600
+                                                       },
+                                                       child: Icon(Icons.add,color: Colors.black,),
                                                      ),
+                                                     Text('$count'.toString(),
+                                                       style: TextStyle(
+                                                           color:Colors.black
+                                                       ),),
+                                                     InkWell(
+                                                       onTap: (){
+                                                         count<=1? 1:count--;
+                                                         setState(() {
+
+                                                         });
+
+                                                       },
+                                                       child: Icon(Icons.remove,color: Colors.black,
+                                                       ),
+                                                     ),
+                                                   ],
+                                                 ),
+                                               ),
+//
+                                             ]  ),
+                                       ),
+                                       Padding(
+                                         padding:  EdgeInsets.only(left:width*0.09, right: width*0.07),
+                                         child: Column(
+                                           crossAxisAlignment: CrossAxisAlignment.start,
+                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                           children: [
+                                             Text("Meal Size",
+                                               style: TextStyle(
+                                                   fontWeight: FontWeight.w500,
+                                                   fontSize: width*0.05
+                                               ),),
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Go Medium (+3 QR)",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox1,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox1=!checkbox1;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                   }
+                                                     return Colors.grey[400];}
+
                                                    ),
 
-                                                 ],
-                                               ),
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
                                              ),
-                                           )
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Go Large (+5 QR)",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox2,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox2=!checkbox2;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                     }
+                                                     return Colors.grey[400];}
+
+                                                   ),
+
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+                                                       color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
+                                             ),
+                                             Text("Your choices of fries",
+                                               style: TextStyle(
+                                                   fontWeight: FontWeight.w500,
+                                                   fontSize: width*0.05
+                                               ),),
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Add herbs to fries (+3 QR)",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox3,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox3=!checkbox3;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                     }
+                                                     return Colors.grey[400];}
+
+                                                   ),
+
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+                                                       color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
+
+                                             ),
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Add more Cheese to fries (+2 QR)",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox4,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox4=!checkbox4;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                     }
+                                                     return Colors.grey[400];}
+
+                                                   ),
+
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+                                                       color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
+                                             ),
+                                             Text("Your choices of drink",
+                                               style: TextStyle(
+                                                   fontWeight: FontWeight.w500,
+                                                   fontSize: width*0.05
+                                               ),),
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Kinza Lemon",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox5,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox5=!checkbox5;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                     }
+                                                     return Colors.grey[400];}
+
+                                                   ),
+
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+                                                       color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
+
+                                             ),
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Kinza Orange",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox6,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox6=!checkbox6;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                     }
+                                                     return Colors.grey[400];}
+
+                                                   ),
+
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+                                                       color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
+                                             ),
+                                             Row(
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               children: [
+                                                 Text("Kinza cola",
+                                                   style: TextStyle(
+                                                       color: colorPage.seventhColor
+                                                   ),),
+                                                 Checkbox(
+                                                   value: checkbox6,
+                                                   onChanged: (value) {
+                                                     setState(() {
+                                                       checkbox6=!checkbox6;
+                                                     });
+
+                                                   },
+                                                   checkColor: colorPage.secondaryColor,
+                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                     if(states.contains(MaterialState.selected)){
+                                                       return Colors.deepOrange;
+                                                     }
+                                                     return Colors.grey[400];}
+
+                                                   ),
+
+                                                   activeColor: colorPage.primaryColor,
+                                                   side: BorderSide(
+                                                       color: Colors.white30
+                                                   ),
+                                                 ),
+
+                                               ],
+                                             ),
+                                             Center(
+                                               child: Container(height: width*0.15,
+                                                 width: width*1.1,
+                                                 decoration: BoxDecoration(
+                                                     color: colorPage.primaryColor,
+                                                     borderRadius: BorderRadius.circular(width*0.05)
+                                                 ),
+                                                 child: Row(
+                                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                   children: [
+                                                     Row(
+                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                       children: [
+                                                         Text("TOTAL",
+                                                           style: TextStyle(
+                                                             fontSize: width*0.04,
+                                                               color: colorPage.secondaryColor,
+                                                               fontWeight: FontWeight.w800
+                                                           ),),
+                                                         SizedBox(width: width*0.03,),
+                                                         Text("23QR",
+                                                           style: TextStyle(
+                                                               fontSize: width*0.06,
+                                                               color: colorPage.secondaryColor,
+                                                               fontWeight: FontWeight.w800
+                                                           ),),]),
+                                                         Text("ADD TO CART",
+                                                           style: TextStyle(
+                                                               fontSize: width*0.04,
+                                                               color: colorPage.secondaryColor,
+                                                               fontWeight: FontWeight.w800
+
+                                                           ),
+                                                         ),
 
 
-                                         ],
-                                       ),
-                                     )
-                                   ],
+                                                   ],
+                                                 ),
+                                               ),
+                                             )
+
+
+                                           ],
+                                         ),
+                                       )
+                                     ],
+                                   ),
                                  ),
-                               ),
-                             );
+                               );
+                             },
+
+                           );
 //
-                            },);
-                      },
-                      child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
+                          },);
+                    },
+                    child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
 
-                      children: [
-                        Container(
-                          height: width*0.4,
+                    children: [
+                      Container(
+                        height: width*0.4,
+                        width: width*0.6,
+                        // color: Colors.red,
+                        child: Container(
+                          height: width*0.35,
                           width: width*0.6,
-                          // color: Colors.red,
-                          child: Container(
-                            height: width*0.35,
-                            width: width*0.6,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(image: AssetImage(abc[index]["image"]),fit: BoxFit.cover),
-                              borderRadius: BorderRadius.circular(width*0.05),
-                            ),
-                            // child: Text(abc[index]["name"]),
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage(abc[index]["image"]),fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(width*0.05),
                           ),
+                          // child: Text(abc[index]["name"]),
+                        ),
 
-                        ),
-                        Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(abc[index]["name"],
-                              style: TextStyle(
-                                  // color: colorPage.primaryColor,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: width*0.05
-                              ),
-                            ),
-                              SizedBox(width: width*0.06,),
-                            Text(abc[index]["price"],
+                      ),
+                      Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(abc[index]["name"],
                             style: TextStyle(
-                              color: colorPage.primaryColor,
-                              fontWeight: FontWeight.w600,
-                              fontSize: width*0.05
-                            ),),
-                          ],
-                        ),
+                                // color: colorPage.primaryColor,
+                                fontWeight: FontWeight.w600,
+                                fontSize: width*0.05
+                            ),
+                          ),
+                            SizedBox(width: width*0.06,),
+                          Text(abc[index]["price"],
+                          style: TextStyle(
+                            color: colorPage.primaryColor,
+                            fontWeight: FontWeight.w600,
+                            fontSize: width*0.05
+                          ),),
+                        ],
+                      ),
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
   children: [
@@ -875,9 +976,8 @@ style: TextStyle(
       ),)
   ],
 )
-                      ],
+                    ],
                 ),
-                    ),
                   );
               },
               separatorBuilder: (context, index) {
@@ -899,351 +999,452 @@ style: TextStyle(
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding:  EdgeInsets.all(width*0.03),
-                  child: GestureDetector(
+                return
+                  InkWell(
                     onTap: (){
                       showModalBottomSheet(context: context,
                         isScrollControlled: true,
                         builder: (context) {
-                          return Expanded(
-                            child: Container(
-                              height: width*1.6,
-                              width: width*1,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding:  EdgeInsets.all(width*0.05),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          height: width*0.3,
-                                          width: width*0.3,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(width*0.05),
-                                          ),
-                                          child: Image.asset(bin[index]["pic"],fit: BoxFit.fill,),
-                                          // color: Colors.red,
-                                        ),
-                                        Column(
+                          return StatefulBuilder(
+                            builder: (context, setState) {
+                              return Container(
+                                height: width*1.6,
+                                width: width*1,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding:  EdgeInsets.all(width*0.05),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                           crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
-                                            Text(bin[index]["name"],
-                                              style: TextStyle(
-                                                  fontSize: width*0.05,
-                                                  fontWeight: FontWeight.w700
-                                              ),),
-                                            Row(
+                                            Container(
+                                              height: width*0.3,
+                                              width: width*0.3,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(width*0.05),
+                                              ),
+                                              child: Image.asset(bin[index]["pic"],fit: BoxFit.fill,),
+                                              // color: Colors.red,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
                                               children: [
-                                                Container(
-                                                    height:width*0.03,
-                                                    width: width*0.03,
-                                                    child: SvgPicture.asset(imagePage.ystar1)),
-                                                Text(bin[index]["star"],
+                                                Text(bin[index]["name"],
                                                   style: TextStyle(
-                                                      fontWeight: FontWeight.w600
+                                                      fontSize: width*0.06,
+                                                      fontWeight: FontWeight.w700
+                                                  ),),
+                                                Row(
+                                                  children: [
+                                                    Container(
+                                                        height:width*0.03,
+                                                        width: width*0.03,
+                                                        child: SvgPicture.asset(imagePage.ystar1)),
+                                                    Text(bin[index]["star"],
+                                                      style: TextStyle(
+                                                          fontWeight: FontWeight.w600
+                                                      ),)
+                                                  ],
+                                                ),
+                                                Text(bin[index]["des"],
+                                                  style: TextStyle(
+                                                      fontSize: width*0.04,
+                                                      color: colorPage.seventhColor
+                                                    // fontWeight: FontWeight.w600
+                                                  ),),
+                                                Text(bin[index]["price"],
+                                                  style: TextStyle(
+                                                      color: colorPage.primaryColor,
+                                                      fontWeight: FontWeight.w700,
+                                                      fontSize: width*0.06
                                                   ),)
                                               ],
                                             ),
-                                            Text(bin[index]["des"],
-                                              style: TextStyle(
-                                                  fontSize: width*0.04,
-                                                  color: colorPage.seventhColor
-                                                // fontWeight: FontWeight.w600
-                                              ),),
-                                            Text(bin[index]["price"],
-                                              style: TextStyle(
-                                                  color: colorPage.primaryColor,
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: width*0.06
-                                              ),)
-                                          ],
+                                            GestureDetector(
+                                                onTap: (){
+                                                  if(save.contains(index)){
+                                                    save.remove(index);
+                                                  }
+                                                  else{
+                                                    save.add(index);
+                                                  }
+                                                  setState(() {
+                                                    taped[index]=!taped[index];
+                                                  }
+                                                  );
+                                                },
+                                                child: Container(
+                                                    height:width*0.03,
+                                                    width:width*0.03,
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                        image: AssetImage(!taped[index]?imagePage.greyheart1:imagePage.redheart1),
+                                                      ),
+
+
+                                                    )))],
                                         ),
-                                        SvgPicture.asset(imagePage.heart1,
-                                          color: colorPage.seventhColor,),
-
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left:width*0.09),
-                                    child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text("Quantity",style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: width*0.05
-                                          ),),
-                                          Container(
-                                            height: width*0.09,
-                                            width: width*0.2,
-                                            decoration: BoxDecoration(
-                                                color: Colors.grey,
-                                                borderRadius: BorderRadius.circular(width*0.05),
-                                                border: Border.all(
-                                                    color: Colors.black
-                                                )
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                InkWell(
-                                                  onTap: (){
-                                                    count++;
-                                                    setState(() {
-
-                                                    });
-
-                                                  },
-                                                  child: Icon(Icons.add,color: Colors.black,),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left:width*0.09),
+                                        child: Row(
+                                          // mainAxisAlignment: MainAxisAlignment.,
+                                            children: [
+                                              Text("Quantity",style: TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: width*0.05
+                                              ),),
+                                              SizedBox(width: width*0.4,),
+                                              Container(
+                                                height: width*0.09,
+                                                width: width*0.2,
+                                                decoration: BoxDecoration(
+                                                    color: colorPage.ninethColor,
+                                                    borderRadius: BorderRadius.circular(width*0.05),
+                                                    border: Border.all(
+                                                        color: colorPage.ninethColor
+                                                    )
                                                 ),
-                                                Text('$count'.toString(),
-                                                  style: TextStyle(
-                                                      color: Colors.black
-                                                  ),),
-                                                InkWell(
-                                                  onTap: (){
-                                                    count<=0? 0:count--;
-                                                    setState(() {
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  children: [
+                                                    InkWell(
+                                                      onTap: (){
+                                                        count++;
+                                                        setState(() {
 
-                                                    });
+                                                        });
 
-                                                  },
-                                                  child: Icon(Icons.remove,color: Colors.black,
-                                                  ),
+                                                      },
+                                                      child: Icon(Icons.add,color: Colors.black,),
+                                                    ),
+                                                    Text('$count'.toString(),
+                                                      style: TextStyle(
+                                                          color:Colors.black
+                                                      ),),
+                                                    InkWell(
+                                                      onTap: (){
+                                                        count<=1? 1:count--;
+                                                        setState(() {
+
+                                                        });
+
+                                                      },
+                                                      child: Icon(Icons.remove,color: Colors.black,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
-                                          ),
+                                              ),
 //
-                                        ]  ),
-                                  ),
-                                  Padding(
-                                    padding:  EdgeInsets.only(left:width*0.09),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text("Meal Size",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: width*0.05
-                                          ),),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            ]  ),
+                                      ),
+                                      Padding(
+                                        padding:  EdgeInsets.only(left:width*0.09, right: width*0.07),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            Text("Go Medium (+3 QR)",
+                                            Text("Meal Size",
                                               style: TextStyle(
-                                                  color: colorPage.seventhColor
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: width*0.05
                                               ),),
-                                            Checkbox(
-                                              value: checkbox1,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  checkbox1=value!;
-                                                });
-
-                                              },
-                                              activeColor: colorPage.primaryColor,
-                                              side: BorderSide(
-                                                  color: colorPage.primaryColor
-
-                                              ),
-                                            ),
-
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("Go Large (+5 QR)",
-                                              style: TextStyle(
-                                                  color: colorPage.seventhColor
-                                              ),),
-                                            Checkbox(
-                                              value: checkbox2,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  checkbox2=value!;
-                                                });
-
-                                              },
-                                              activeColor: colorPage.primaryColor,
-                                              side: BorderSide(
-                                                  color: colorPage.primaryColor
-
-                                              ),
-                                            ),
-
-                                          ],
-                                        ),
-                                        Text("Your choices of fries",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: width*0.05
-                                          ),),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("Add herbs to fries (+3 QR)",
-                                              style: TextStyle(
-                                                  color: colorPage.seventhColor
-                                              ),),
-                                            Checkbox(
-                                              value: checkbox3,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  checkbox3=value!;
-                                                });
-
-                                              },
-                                              activeColor: colorPage.primaryColor,
-                                              side: BorderSide(
-                                                  color: colorPage.primaryColor
-
-                                              ),
-                                            ),
-
-                                          ],
-
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("Add more Cheese to fries (+2 QR)",
-                                              style: TextStyle(
-                                                  color: colorPage.seventhColor
-                                              ),),
-                                            Checkbox(
-                                              value: checkbox4,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  checkbox4=value!;
-                                                });
-
-                                              },
-                                              activeColor: colorPage.primaryColor,
-                                              side: BorderSide(
-                                                  color: colorPage.primaryColor
-
-                                              ),
-                                            ),
-
-                                          ],
-                                        ),
-                                        Text("Your choices of drink",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: width*0.05
-                                          ),),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("Kinza Lemon",
-                                              style: TextStyle(
-                                                  color: colorPage.seventhColor
-                                              ),),
-                                            Checkbox(
-                                              value: checkbox5,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  checkbox5=value!;
-                                                });
-
-                                              },
-                                              activeColor: colorPage.primaryColor,
-                                              side: BorderSide(
-                                                  color: colorPage.primaryColor
-
-                                              ),
-                                            ),
-
-                                          ],
-
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("Kinza Orange",
-                                              style: TextStyle(
-                                                  color: colorPage.seventhColor
-                                              ),),
-                                            Checkbox(
-                                              value: checkbox6,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  checkbox6=value!;
-                                                });
-
-                                              },
-                                              activeColor: colorPage.primaryColor,
-                                              side: BorderSide(
-                                                  color: colorPage.primaryColor
-
-                                              ),
-                                            ),
-
-                                          ],
-                                        ),
-                                        Center(
-                                          child: Container(height: width*0.085,
-                                            width: width*0.7,
-                                            decoration: BoxDecoration(
-                                                color: colorPage.primaryColor,
-                                                borderRadius: BorderRadius.circular(width*0.02)
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Text("TOTAL:23QR",
+                                                Text("Go Medium (+3 QR)",
                                                   style: TextStyle(
-                                                      color: colorPage.secondaryColor,
-                                                      fontWeight: FontWeight.w600
+                                                      color: colorPage.seventhColor
                                                   ),),
-                                                Text("ADD TO CART",
-                                                  style: TextStyle(
-                                                      color: colorPage.secondaryColor,
-                                                      fontWeight: FontWeight.w600
+                                                Checkbox(
+                                                  value: checkbox1,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox1=!checkbox1;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
                                                   ),
                                                 ),
 
                                               ],
                                             ),
-                                          ),
-                                        )
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text("Go Large (+5 QR)",
+                                                  style: TextStyle(
+                                                      color: colorPage.seventhColor
+                                                  ),),
+                                                Checkbox(
+                                                  value: checkbox2,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox2=!checkbox2;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
+                                                  ),
+                                                ),
+
+                                              ],
+                                            ),
+                                            Text("Your choices of fries",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: width*0.05
+                                              ),),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text("Add herbs to fries (+3 QR)",
+                                                  style: TextStyle(
+                                                      color: colorPage.seventhColor
+                                                  ),),
+                                                Checkbox(
+                                                  value: checkbox3,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox3=!checkbox3;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
+                                                  ),
+                                                ),
+
+                                              ],
+
+                                            ),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text("Add more Cheese to fries (+2 QR)",
+                                                  style: TextStyle(
+                                                      color: colorPage.seventhColor
+                                                  ),),
+                                                Checkbox(
+                                                  value: checkbox4,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox4=!checkbox4;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
+                                                  ),
+                                                ),
+
+                                              ],
+                                            ),
+                                            Text("Your choices of drink",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: width*0.05
+                                              ),),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text("Kinza Lemon",
+                                                  style: TextStyle(
+                                                      color: colorPage.seventhColor
+                                                  ),),
+                                                Checkbox(
+                                                  value: checkbox5,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox5=!checkbox5;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
+                                                  ),
+                                                ),
+
+                                              ],
+
+                                            ),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text("Kinza Orange",
+                                                  style: TextStyle(
+                                                      color: colorPage.seventhColor
+                                                  ),),
+                                                Checkbox(
+                                                  value: checkbox6,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox6=!checkbox6;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
+                                                  ),
+                                                ),
+
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text("Kinza cola",
+                                                  style: TextStyle(
+                                                      color: colorPage.seventhColor
+                                                  ),),
+                                                Checkbox(
+                                                  value: checkbox6,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      checkbox6=!checkbox6;
+                                                    });
+
+                                                  },
+                                                  checkColor: colorPage.secondaryColor,
+                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                    if(states.contains(MaterialState.selected)){
+                                                      return Colors.deepOrange;
+                                                    }
+                                                    return Colors.grey[400];}
+
+                                                  ),
+
+                                                  activeColor: colorPage.primaryColor,
+                                                  side: BorderSide(
+                                                      color: Colors.white30
+                                                  ),
+                                                ),
+
+                                              ],
+                                            ),
+                                            Center(
+                                              child: Container(height: width*0.15,
+                                                width: width*1.1,
+                                                decoration: BoxDecoration(
+                                                    color: colorPage.primaryColor,
+                                                    borderRadius: BorderRadius.circular(width*0.05)
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  children: [
+                                                    Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        children: [
+                                                          Text("TOTAL",
+                                                            style: TextStyle(
+                                                                fontSize: width*0.04,
+                                                                color: colorPage.secondaryColor,
+                                                                fontWeight: FontWeight.w800
+                                                            ),),
+                                                          SizedBox(width: width*0.03,),
+                                                          Text("23QR",
+                                                            style: TextStyle(
+                                                                fontSize: width*0.06,
+                                                                color: colorPage.secondaryColor,
+                                                                fontWeight: FontWeight.w800
+                                                            ),),]),
+                                                    Text("ADD TO CART",
+                                                      style: TextStyle(
+                                                          fontSize: width*0.04,
+                                                          color: colorPage.secondaryColor,
+                                                          fontWeight: FontWeight.w800
+
+                                                      ),
+                                                    ),
 
 
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
+                                                  ],
+                                                ),
+                                              ),
+                                            )
+
+
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+
                           );
 //
                         },);
                     },
-                    // onTap: (){
-                    //   showModalBottomSheet(context: context,
-                    //       backgroundColor: colorPage.secondaryColor,
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.only(topLeft: Radius.circular(width*0.05),topRight: Radius.circular(width*0.05))
-                    //       ),
-                    //       builder: (context) {
-                    //     return Column(
-                    //       children: [
-                    //
-                    //
-                    //       ],
-                    //     );
-                    //
-                    //       },);
-                    //
-                    // },
                     child: Container(
                       height: width*0.6,
                       width: width*0.9,
@@ -1257,7 +1458,6 @@ style: TextStyle(
                         children: [
                           Stack(
                             children:[
-
                               Container(
                               height: width*0.4,
                               width: width*0.9,
@@ -1353,9 +1553,7 @@ style: TextStyle(
                       ),
 
                     ),
-                  ),
-
-                );
+                  );
               },
               separatorBuilder: (BuildContext context, index) {
                 return SizedBox(width: width * 0.03);
