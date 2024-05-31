@@ -176,7 +176,7 @@ body: Stack(
         Padding(
           padding:  EdgeInsets.only(left: width*0.04,right: width*0.04),
           child: Container(
-            height: width*0.2,
+            height: width*0.1,
             width: width*0.03,
             child: TextFormField(
                 keyboardType: TextInputType.text,
