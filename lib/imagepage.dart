@@ -33,4 +33,5 @@ class imagePage{
   static const pinkarrow1="assets/images/pinkarrow.png";
   static const blackarrow1="assets/images/blackarrow.jpg";
   static const images1="assets/images/images.jpg";
+  static const cart11="assets/images/cart1.svg";
 }

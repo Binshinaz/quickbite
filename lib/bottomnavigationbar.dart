@@ -48,7 +48,7 @@ class _BottomnavigationPageState extends State<BottomnavigationPage> {
         },
         padding: EdgeInsets.all(width*0.03),
         tabs: const [
-          GButton(icon: Icons.account_circle,
+          GButton(leading: SvgPicture.asset(),
           text:"go crispy"),
           GButton(icon: Icons.shopping_cart,
               text:"cart"),
