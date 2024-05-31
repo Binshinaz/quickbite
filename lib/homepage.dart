@@ -19,10 +19,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List save=[];
-  List<bool>taped=List.generate(6, (index) => false);
+  // List<bool>taped=List.generate(6, (index) => false);
 
   int _selectedIndex = -1;
   bool checkbox1=false;
+  bool checkbox2=false;
+  bool checkbox3=false;
+  bool checkbox4=false;
+  bool checkbox5=false;
+  bool checkbox6=false;
   int count=0;
   List bin=[{
   "pic":"assets/images/fillet.png",
@@ -124,6 +129,7 @@ class _HomePageState extends State<HomePage> {
 "text":"Kids Meals"
 },
 ];
+  List<bool>taped=List.generate(6, (index) => false);
     int currentindex = 0;
   int selectedindex=0;
 
@@ -253,7 +259,7 @@ body: Stack(
     child: SingleChildScrollView(
     // controller: _scrollController,
     child: Padding(
-      padding:  EdgeInsets.only(left: width*0.05,right: width*0.02),
+      padding:  EdgeInsets.only(left: width*0.05,right: width*0.04),
       child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -279,7 +285,7 @@ body: Stack(
           child: Container(
       height: width * 0.50,
        width: double.infinity,
-        margin: EdgeInsets.all(width * 0.015),
+         margin: EdgeInsets.all(width * 0.015),
       decoration: BoxDecoration(
 
       borderRadius: BorderRadius.circular(width*0.05),
@@ -329,7 +335,7 @@ body: Stack(
                       children: [
                         Container(
                           height: width * 0.25,
-                          width: width * 0.3,
+                          width: width * 0.25,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(width*0.03),
                             image: DecorationImage(
@@ -378,7 +384,7 @@ body: Stack(
           ],
         ),
         Padding(
-          padding: EdgeInsets.all(width * 0.03),
+          padding: EdgeInsets.all(width * 0.02),
           child:grid==true? SingleChildScrollView(
             child: Container(
               height: width*1,
@@ -473,7 +479,7 @@ body: Stack(
                         showModalBottomSheet(context: context,
                             isScrollControlled: true,
                             builder: (context) {
-                             return Expanded(
+                             return SingleChildScrollView(
                                child: Container(
                                   height: width*1.6,
                                  width: width*1,
@@ -651,10 +657,10 @@ fontWeight: FontWeight.w500,
                                                      color: colorPage.seventhColor
                                                  ),),
                                                Checkbox(
-                                                 value: checkbox1,
+                                                 value: checkbox2,
                                                  onChanged: (value) {
                                                    setState(() {
-                                                     checkbox1=value!;
+                                                     checkbox2=value!;
                                                    });
 
                                                  },
@@ -680,10 +686,10 @@ fontWeight: FontWeight.w500,
                                                      color: colorPage.seventhColor
                                                  ),),
                                                Checkbox(
-                                                 value: checkbox1,
+                                                 value: checkbox3,
                                                  onChanged: (value) {
                                                    setState(() {
-                                                     checkbox1=value!;
+                                                     checkbox3=value!;
                                                    });
 
                                                  },
@@ -705,10 +711,10 @@ fontWeight: FontWeight.w500,
                                                      color: colorPage.seventhColor
                                                  ),),
                                                Checkbox(
-                                                 value: checkbox1,
+                                                 value: checkbox4,
                                                  onChanged: (value) {
                                                    setState(() {
-                                                     checkbox1=value!;
+                                                     checkbox4=value!;
                                                    });
 
                                                  },
@@ -734,10 +740,10 @@ fontWeight: FontWeight.w500,
                                                      color: colorPage.seventhColor
                                                  ),),
                                                Checkbox(
-                                                 value: checkbox1,
+                                                 value: checkbox5,
                                                  onChanged: (value) {
                                                    setState(() {
-                                                     checkbox1=value!;
+                                                     checkbox5=value!;
                                                    });
 
                                                  },
@@ -759,10 +765,10 @@ fontWeight: FontWeight.w500,
                                                      color: colorPage.seventhColor
                                                  ),),
                                                Checkbox(
-                                                 value: checkbox1,
+                                                 value: checkbox6,
                                                  onChanged: (value) {
                                                    setState(() {
-                                                     checkbox1=value!;
+                                                     checkbox6=value!;
                                                    });
 
                                                  },
@@ -776,7 +782,7 @@ fontWeight: FontWeight.w500,
                                              ],
                                            ),
                                            Center(
-                                             child: Container(height: width*0.085,
+                                             child: Container(height: width*0.086,
                                              width: width*0.7,
                                              decoration: BoxDecoration(
                                                color: colorPage.primaryColor,
@@ -1059,10 +1065,10 @@ style: TextStyle(
                                                   color: colorPage.seventhColor
                                               ),),
                                             Checkbox(
-                                              value: checkbox1,
+                                              value: checkbox2,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  checkbox1=value!;
+                                                  checkbox2=value!;
                                                 });
 
                                               },
@@ -1088,10 +1094,10 @@ style: TextStyle(
                                                   color: colorPage.seventhColor
                                               ),),
                                             Checkbox(
-                                              value: checkbox1,
+                                              value: checkbox3,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  checkbox1=value!;
+                                                  checkbox3=value!;
                                                 });
 
                                               },
@@ -1113,10 +1119,10 @@ style: TextStyle(
                                                   color: colorPage.seventhColor
                                               ),),
                                             Checkbox(
-                                              value: checkbox1,
+                                              value: checkbox4,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  checkbox1=value!;
+                                                  checkbox4=value!;
                                                 });
 
                                               },
@@ -1142,10 +1148,10 @@ style: TextStyle(
                                                   color: colorPage.seventhColor
                                               ),),
                                             Checkbox(
-                                              value: checkbox1,
+                                              value: checkbox5,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  checkbox1=value!;
+                                                  checkbox5=value!;
                                                 });
 
                                               },
@@ -1167,10 +1173,10 @@ style: TextStyle(
                                                   color: colorPage.seventhColor
                                               ),),
                                             Checkbox(
-                                              value: checkbox1,
+                                              value: checkbox6,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  checkbox1=value!;
+                                                  checkbox6=value!;
                                                 });
 
                                               },
