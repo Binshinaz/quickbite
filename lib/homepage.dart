@@ -781,28 +781,7 @@ color: Colors.white30
                                                      style: TextStyle(
                                                          color: colorPage.seventhColor
                                                      ),),
-                                                   // Checkbox(
-                                                   //   value: checkbox5,
-                                                   //   onChanged: (value) {
-                                                   //     setState(() {
-                                                   //       checkbox5=!checkbox5;
-                                                   //     });
                                                    //
-                                                   //   },
-                                                   //   checkColor: colorPage.secondaryColor,
-                                                   //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                   //     if(states.contains(MaterialState.selected)){
-                                                   //       return Colors.deepOrange;
-                                                   //     }
-                                                   //     return Colors.grey[400];}
-                                                   //
-                                                   //   ),
-                                                   //
-                                                   //   activeColor: colorPage.primaryColor,
-                                                   //   side: BorderSide(
-                                                   //       color: Colors.white30
-                                                   //   ),
-                                                   // ),
                                                    Container(
                                                      height: width*0.05,
                                                      width: width*0.05,
@@ -836,29 +815,7 @@ color: Colors.white30
                                                      style: TextStyle(
                                                          color: colorPage.seventhColor
                                                      ),),
-                                                   // Checkbox(
-                                                   //   value: checkbox6,
-                                                   //   onChanged: (value) {
-                                                   //     setState(() {
-                                                   //       checkbox6=!checkbox6;
-                                                   //     });
                                                    //
-                                                   //   },
-                                                   //   checkColor: colorPage.secondaryColor,
-                                                   //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                   //     if(states.contains(MaterialState.selected)){
-                                                   //       return Colors.deepOrange;
-                                                   //     }
-                                                   //     return Colors.grey[400];}
-                                                   //
-                                                   //   ),
-                                                   //
-                                                   //   activeColor: colorPage.primaryColor,
-                                                   //   side: BorderSide(
-                                                   //       color: Colors.white30
-                                                   //   ),
-                                                   // ),
-                                                   // SizedBox(height: width*0.05,),
                                                    Container(
                                                      height: width*0.05,
                                                      width: width*0.05,
@@ -891,28 +848,7 @@ color: Colors.white30
                                                      style: TextStyle(
                                                          color: colorPage.seventhColor
                                                      ),),
-                                                   // Checkbox(
-                                                   //   value: checkbox6,
-                                                   //   onChanged: (value) {
-                                                   //     setState(() {
-                                                   //       checkbox6=!checkbox6;
-                                                   //     });
                                                    //
-                                                   //   },
-                                                   //   checkColor: colorPage.secondaryColor,
-                                                   //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                   //     if(states.contains(MaterialState.selected)){
-                                                   //       return Colors.deepOrange;
-                                                   //     }
-                                                   //     return Colors.grey[400];}
-                                                   //
-                                                   //   ),
-                                                   //
-                                                   //   activeColor: colorPage.primaryColor,
-                                                   //   side: BorderSide(
-                                                   //       color: Colors.white30
-                                                   //   ),
-                                                   // ),
                                                    Container(
                                                      height: width*0.05,
                                                      width: width*0.05,
@@ -1497,28 +1433,7 @@ style: TextStyle(
                                                   style: TextStyle(
                                                       color: colorPage.seventhColor
                                                   ),),
-                                                // Checkbox(
-                                                //   value: checkbox6,
-                                                //   onChanged: (value) {
-                                                //     setState(() {
-                                                //       checkbox6=!checkbox6;
-                                                //     });
                                                 //
-                                                //   },
-                                                //   checkColor: colorPage.secondaryColor,
-                                                //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                //     if(states.contains(MaterialState.selected)){
-                                                //       return Colors.deepOrange;
-                                                //     }
-                                                //     return Colors.grey[400];}
-                                                //
-                                                //   ),
-                                                //
-                                                //   activeColor: colorPage.primaryColor,
-                                                //   side: BorderSide(
-                                                //       color: Colors.white30
-                                                //   ),
-                                                // ),
                                                 Container(
                                                   height: width*0.05,
                                                   width: width*0.05,
@@ -1562,7 +1477,7 @@ style: TextStyle(
                                                                 color: colorPage.secondaryColor,
                                                                 fontWeight: FontWeight.w800
                                                             ),),
-                                                          SizedBox(width: width*0.03,),
+                                                          SizedBox(width: width*0.04,),
                                                           Text("23QR",
                                                             style: TextStyle(
                                                                 fontSize: width*0.06,
