@@ -178,6 +178,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                           child: Image(
                                             image:AssetImage(selectedindex==0?bin[index]["pic"]:cat[index]["pic"]),
                                             fit: BoxFit.cover,)),
+
                                       SizedBox(width: width*0.03,),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
