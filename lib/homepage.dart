@@ -253,7 +253,7 @@ body: Stack(
     child: SingleChildScrollView(
     // controller: _scrollController,
     child: Padding(
-      padding:  EdgeInsets.only(left: width*0.02,right: width*0.02),
+      padding:  EdgeInsets.only(left: width*0.05,right: width*0.02),
       child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -302,7 +302,7 @@ body: Stack(
           fontWeight: FontWeight.w600,
 
         ),),
-        SizedBox(width: width*0.02,),
+        SizedBox(height: width*0.02,),
         Container(
           height: width * 0.37,
           width: width * 1,
