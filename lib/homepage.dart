@@ -101,6 +101,8 @@ class _HomePageState extends State<HomePage> {
   bool checkbox4=false;
   bool checkbox5=false;
   bool checkbox6=false;
+  String radio1="s";
+
     List images = [
         "assets/images/food1.png",
         "assets/images/food2.png",
@@ -128,7 +130,8 @@ class _HomePageState extends State<HomePage> {
 ];
   List<bool>taped=List.generate(6, (index) => false);
     int currentindex = 0;
-  int selectedindex=0;
+  // int selectedindex=0;
+  String? gender;
 
     @override
   Widget build(BuildContext context) {
@@ -758,108 +761,186 @@ color: Colors.white30
 
                                                ],
                                              ),
-                                             Text("Your choices of drink",
-                                               style: TextStyle(
-                                                   fontWeight: FontWeight.w500,
-                                                   fontSize: width*0.05
-                                               ),),
-                                             Row(
-                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                               children: [
-                                                 Text("Kinza Lemon",
-                                                   style: TextStyle(
-                                                       color: colorPage.seventhColor
-                                                   ),),
-                                                 Checkbox(
-                                                   value: checkbox5,
-                                                   onChanged: (value) {
-                                                     setState(() {
-                                                       checkbox5=!checkbox5;
-                                                     });
+                                             Padding(
+                                               padding:  EdgeInsets.only(right: width*0.04),
+                                               child: Column(
+                                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Text("Your choices of drink",
+                                                     style: TextStyle(
+                                                         fontWeight: FontWeight.w500,
+                                                         fontSize: width*0.05
+                                                     ),),
 
-                                                   },
-                                                   checkColor: colorPage.secondaryColor,
-                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                     if(states.contains(MaterialState.selected)){
-                                                       return Colors.deepOrange;
-                                                     }
-                                                     return Colors.grey[400];}
 
+                                               Row(
+                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                 children: [
+                                                   Text("Kinza Lemon",
+                                                     style: TextStyle(
+                                                         color: colorPage.seventhColor
+                                                     ),),
+                                                   // Checkbox(
+                                                   //   value: checkbox5,
+                                                   //   onChanged: (value) {
+                                                   //     setState(() {
+                                                   //       checkbox5=!checkbox5;
+                                                   //     });
+                                                   //
+                                                   //   },
+                                                   //   checkColor: colorPage.secondaryColor,
+                                                   //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                   //     if(states.contains(MaterialState.selected)){
+                                                   //       return Colors.deepOrange;
+                                                   //     }
+                                                   //     return Colors.grey[400];}
+                                                   //
+                                                   //   ),
+                                                   //
+                                                   //   activeColor: colorPage.primaryColor,
+                                                   //   side: BorderSide(
+                                                   //       color: Colors.white30
+                                                   //   ),
+                                                   // ),
+                                                   Container(
+                                                     height: width*0.05,
+                                                     width: width*0.05,
+                                                     // color: Colors.red,
+                                                     child: Radio(
+                                                       fillColor: MaterialStatePropertyAll(
+                                                           Colors.grey[400]),
+                                                       activeColor: colorPage.primaryColor,
+                                                         value: "lemon",
+                                                         groupValue: gender,
+                                                         onChanged: (String?Value){
+                                                           setState((){
+                                                             gender= Value;
+                                                           });
+
+                                                         },
+
+
+                                                     ),
                                                    ),
 
-                                                   activeColor: colorPage.primaryColor,
-                                                   side: BorderSide(
-                                                       color: Colors.white30
+                                                 ],
+
+                                               ),
+                                               SizedBox(height: width*0.05,),
+                                               Row(
+                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                                                 children: [
+                                                   Text("Kinza Orange",
+                                                     style: TextStyle(
+                                                         color: colorPage.seventhColor
+                                                     ),),
+                                                   // Checkbox(
+                                                   //   value: checkbox6,
+                                                   //   onChanged: (value) {
+                                                   //     setState(() {
+                                                   //       checkbox6=!checkbox6;
+                                                   //     });
+                                                   //
+                                                   //   },
+                                                   //   checkColor: colorPage.secondaryColor,
+                                                   //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                   //     if(states.contains(MaterialState.selected)){
+                                                   //       return Colors.deepOrange;
+                                                   //     }
+                                                   //     return Colors.grey[400];}
+                                                   //
+                                                   //   ),
+                                                   //
+                                                   //   activeColor: colorPage.primaryColor,
+                                                   //   side: BorderSide(
+                                                   //       color: Colors.white30
+                                                   //   ),
+                                                   // ),
+                                                   // SizedBox(height: width*0.05,),
+                                                   Container(
+                                                     height: width*0.05,
+                                                     width: width*0.05,
+                                                     // color: Colors.red,
+                                                     child: Radio(
+                                                       fillColor: MaterialStatePropertyAll(
+                                                           Colors.grey[400]),
+                                                       activeColor: colorPage.primaryColor,
+
+                                                       value: "orange",
+                                                       groupValue: gender,
+                                                       onChanged: (String?Value){
+                                                         setState((){
+                                                           gender= Value!;
+                                                         });
+
+                                                       },
+
+
+                                                     ),
                                                    ),
-                                                 ),
 
-                                               ],
+                                                 ],
+                                               ),
+                                                   SizedBox(height: width*0.05,),
+                                               Row(
+                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                 children: [
+                                                   Text("Kinza cola",
+                                                     style: TextStyle(
+                                                         color: colorPage.seventhColor
+                                                     ),),
+                                                   // Checkbox(
+                                                   //   value: checkbox6,
+                                                   //   onChanged: (value) {
+                                                   //     setState(() {
+                                                   //       checkbox6=!checkbox6;
+                                                   //     });
+                                                   //
+                                                   //   },
+                                                   //   checkColor: colorPage.secondaryColor,
+                                                   //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                   //     if(states.contains(MaterialState.selected)){
+                                                   //       return Colors.deepOrange;
+                                                   //     }
+                                                   //     return Colors.grey[400];}
+                                                   //
+                                                   //   ),
+                                                   //
+                                                   //   activeColor: colorPage.primaryColor,
+                                                   //   side: BorderSide(
+                                                   //       color: Colors.white30
+                                                   //   ),
+                                                   // ),
+                                                   Container(
+                                                     height: width*0.05,
+                                                     width: width*0.05,
+                                                     // color: Colors.red,
+                                                     child: Radio(
+                                                       fillColor: MaterialStatePropertyAll(
+                                                           Colors.grey[400]),
+                                                       activeColor: colorPage.primaryColor,
 
+                                                       value: "cola",
+                                                       groupValue: gender,
+                                                       onChanged: (String?Value){
+                                                         setState((){
+                                                           gender= Value!;
+                                                         });
+
+                                                       },
+
+
+                                                     ),
+                                                   ),
+
+                                                 ],
+                                               ),
+                                               ]
+                                               ),
                                              ),
-                                             Row(
-                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                               children: [
-                                                 Text("Kinza Orange",
-                                                   style: TextStyle(
-                                                       color: colorPage.seventhColor
-                                                   ),),
-                                                 Checkbox(
-                                                   value: checkbox6,
-                                                   onChanged: (value) {
-                                                     setState(() {
-                                                       checkbox6=!checkbox6;
-                                                     });
-
-                                                   },
-                                                   checkColor: colorPage.secondaryColor,
-                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                     if(states.contains(MaterialState.selected)){
-                                                       return Colors.deepOrange;
-                                                     }
-                                                     return Colors.grey[400];}
-
-                                                   ),
-
-                                                   activeColor: colorPage.primaryColor,
-                                                   side: BorderSide(
-                                                       color: Colors.white30
-                                                   ),
-                                                 ),
-
-                                               ],
-                                             ),
-                                             Row(
-                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                               children: [
-                                                 Text("Kinza cola",
-                                                   style: TextStyle(
-                                                       color: colorPage.seventhColor
-                                                   ),),
-                                                 Checkbox(
-                                                   value: checkbox6,
-                                                   onChanged: (value) {
-                                                     setState(() {
-                                                       checkbox6=!checkbox6;
-                                                     });
-
-                                                   },
-                                                   checkColor: colorPage.secondaryColor,
-                                                   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                     if(states.contains(MaterialState.selected)){
-                                                       return Colors.deepOrange;
-                                                     }
-                                                     return Colors.grey[400];}
-
-                                                   ),
-
-                                                   activeColor: colorPage.primaryColor,
-                                                   side: BorderSide(
-                                                       color: Colors.white30
-                                                   ),
-                                                 ),
-
-                                               ],
-                                             ),
+                                             SizedBox(height: width*0.05,),
                                              Center(
                                                child: Container(height: width*0.15,
                                                  width: width*1.1,
@@ -1283,108 +1364,185 @@ style: TextStyle(
 
                                               ],
                                             ),
-                                            Text("Your choices of drink",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: width*0.05
-                                              ),),
+                                            Padding(
+                                              padding: EdgeInsets.only(right:width*0.03),
+                                              child: Column(
+                                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text("Your choices of drink",
+                                                    style: TextStyle(
+                                                        fontWeight: FontWeight.w500,
+                                                        fontSize: width*0.05
+                                                    ),),
+
+
+                                            SizedBox(height: width*0.05),
                                             Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Text("Kinza Lemon",
                                                   style: TextStyle(
                                                       color: colorPage.seventhColor
                                                   ),),
-                                                Checkbox(
-                                                  value: checkbox5,
-                                                  onChanged: (value) {
-                                                    setState(() {
-                                                      checkbox5=!checkbox5;
-                                                    });
+                                                // Checkbox(
+                                                //   value: checkbox5,
+                                                //   onChanged: (value) {
+                                                //     setState(() {
+                                                //       checkbox5=!checkbox5;
+                                                //     });
+                                                //
+                                                //   },
+                                                //   checkColor: colorPage.secondaryColor,
+                                                //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                //     if(states.contains(MaterialState.selected)){
+                                                //       return Colors.deepOrange;
+                                                //     }
+                                                //     return Colors.grey[400];}
+                                                //
+                                                //   ),
+                                                //
+                                                //   activeColor: colorPage.primaryColor,
+                                                //   side: BorderSide(
+                                                //       color: Colors.white30
+                                                //   ),
+                                                // ),
+                                                Container(
+                                                  height: width*0.05,
+                                                  width: width*0.05,
+                                                  // color: Colors.red,
+                                                  child: Radio(
+                                                    focusColor: colorPage.primaryColor,
+                                                    fillColor: MaterialStatePropertyAll(
+                                                        Colors.grey[400] ),
+                                                    activeColor: colorPage.primaryColor,
 
-                                                  },
-                                                  checkColor: colorPage.secondaryColor,
-                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                    if(states.contains(MaterialState.selected)){
-                                                      return Colors.deepOrange;
-                                                    }
-                                                    return Colors.grey[400];}
 
-                                                  ),
+                                                    value: "lemon",
+                                                    groupValue:gender ,
+                                                    onChanged: (String?Value){
+                                                      setState((){
+                                                        gender= Value;
+                                                      });
 
-                                                  activeColor: colorPage.primaryColor,
-                                                  side: BorderSide(
-                                                      color: Colors.white30
+                                                    },
+
+
                                                   ),
                                                 ),
-
                                               ],
 
                                             ),
+                                            SizedBox(width: width*0.06,),
+                                            SizedBox(height: width*0.05),
                                             Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Text("Kinza Orange",
                                                   style: TextStyle(
                                                       color: colorPage.seventhColor
                                                   ),),
-                                                Checkbox(
-                                                  value: checkbox6,
-                                                  onChanged: (value) {
-                                                    setState(() {
-                                                      checkbox6=!checkbox6;
-                                                    });
+                                                // Checkbox(
+                                                //   value: checkbox6,
+                                                //   onChanged: (value) {
+                                                //     setState(() {
+                                                //       checkbox6=!checkbox6;
+                                                //     });
+                                                //
+                                                //   },
+                                                //   checkColor: colorPage.secondaryColor,
+                                                //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                //     if(states.contains(MaterialState.selected)){
+                                                //       return Colors.deepOrange;
+                                                //     }
+                                                //     return Colors.grey[400];}
+                                                //
+                                                //   ),
+                                                //
+                                                //   activeColor: colorPage.primaryColor,
+                                                //   side: BorderSide(
+                                                //       color: Colors.white30
+                                                //   ),
+                                                // ),
+                                                Container(
+                                                  height: width*0.05,
+                                                  width: width*0.05,
+                                                  // color: Colors.red,
+                                                  child: Radio(
+                                                    fillColor: MaterialStatePropertyAll(
+                                                        Colors.grey[400]),
+                                                    activeColor: colorPage.primaryColor,
 
-                                                  },
-                                                  checkColor: colorPage.secondaryColor,
-                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                    if(states.contains(MaterialState.selected)){
-                                                      return Colors.deepOrange;
-                                                    }
-                                                    return Colors.grey[400];}
 
-                                                  ),
+                                                    value: "orange",
+                                                    groupValue: gender,
+                                                    onChanged: (String?Value){
+                                                      setState((){
+                                                        gender= Value;
+                                                      });
 
-                                                  activeColor: colorPage.primaryColor,
-                                                  side: BorderSide(
-                                                      color: Colors.white30
+                                                    },
+
+
                                                   ),
                                                 ),
 
                                               ],
                                             ),
+                                            SizedBox(height: width*0.05),
                                             Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Text("Kinza cola",
                                                   style: TextStyle(
                                                       color: colorPage.seventhColor
                                                   ),),
-                                                Checkbox(
-                                                  value: checkbox6,
-                                                  onChanged: (value) {
-                                                    setState(() {
-                                                      checkbox6=!checkbox6;
-                                                    });
+                                                // Checkbox(
+                                                //   value: checkbox6,
+                                                //   onChanged: (value) {
+                                                //     setState(() {
+                                                //       checkbox6=!checkbox6;
+                                                //     });
+                                                //
+                                                //   },
+                                                //   checkColor: colorPage.secondaryColor,
+                                                //   fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
+                                                //     if(states.contains(MaterialState.selected)){
+                                                //       return Colors.deepOrange;
+                                                //     }
+                                                //     return Colors.grey[400];}
+                                                //
+                                                //   ),
+                                                //
+                                                //   activeColor: colorPage.primaryColor,
+                                                //   side: BorderSide(
+                                                //       color: Colors.white30
+                                                //   ),
+                                                // ),
+                                                Container(
+                                                  height: width*0.05,
+                                                  width: width*0.05,
+                                                  // color: Colors.red,
+                                                  child: Radio(
+                                                      fillColor: MaterialStatePropertyAll(
+                                                          Colors.grey[400] ),
+                                                      activeColor: colorPage.primaryColor,
 
-                                                  },
-                                                  checkColor: colorPage.secondaryColor,
-                                                  fillColor: MaterialStateProperty.resolveWith((Set<MaterialState>states){
-                                                    if(states.contains(MaterialState.selected)){
-                                                      return Colors.deepOrange;
-                                                    }
-                                                    return Colors.grey[400];}
+                                                    value: "cola",
+                                                    groupValue: gender,
+                                                    onChanged: (String?Value){
+                                                      setState((){
+                                                        gender= Value;
+                                                      });
 
-                                                  ),
+                                                    },
 
-                                                  activeColor: colorPage.primaryColor,
-                                                  side: BorderSide(
-                                                      color: Colors.white30
+
                                                   ),
                                                 ),
-
                                               ],
                                             ),
+                                            SizedBox(height: width*0.05),
                                             Center(
                                               child: Container(height: width*0.15,
                                                 width: width*1.1,
@@ -1433,7 +1591,10 @@ style: TextStyle(
                                     ],
                                   ),
                                 ),
-                              );
+                                ]
+
+                                    ),
+                              ));
                             },
 
                           );
