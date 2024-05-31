@@ -32,56 +32,8 @@ class _SplashPageState extends State<SplashPage> {
           image: DecorationImage(image:
          AssetImage(imagePage.images1),fit: BoxFit.cover,),
           ),
-        // child: Image.asset(imagePage.images1),
+
           ),
-
-//       SingleChildScrollView(
-//         child: Column(
-//           children: [
-//             Stack(
-//               children:[
-//
-//               //
-// Positioned(
-//   top:0,
-//   right: width*0.01,  child: CircleAvatar(
-//     radius: width*0.28,
-//     backgroundColor: Colors.black,
-//     child: Container(
-//       height: width*0.4,
-//       width: width*0.4,
-//       child: Image.asset(imagePage.quick1, fit: BoxFit.cover,
-//       ),
-//     ),
-//   ),
-// ),
-//         //         Positioned(
-//         //           bottom:0,
-//         //           right: width*0.01,
-//         //           child: InkWell(
-//         //             onTap: (){
-//         //               Navigator.push(context, MaterialPageRoute(builder: (context) => BottomnavigationPage(),));
-//         //             },
-//         //             child: Container(
-//         //               height: width*0.3,
-//         //               width: width*0.3,
-//         //               decoration: BoxDecoration(
-//         //                 color: colorPage.primaryColor,
-//         //                 borderRadius: BorderRadius.circular(width*0.09),
-//         //                 image: DecorationImage(
-//         //                   image: AssetImage(imagePage.blackarrow1,)
-//         //                 )
-//         //               ),
-//         //             ),
-//         //           ),
-//         //         )
-//         ]
-//             ),
-//
-//           ],
-//         ),
-//       )
-
 
     );
   }
