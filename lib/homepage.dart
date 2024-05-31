@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
     {"image":"assets/images/food6.png",
       "name":"cheese burger",
       "price":"30 QR",
-      "des":"1 cheese burger,ketchup, drink",
+      "des":"1 cheese burger, drink",
       "star":"4.2",
     },
     {"image":"assets/images/food7.png",
@@ -167,7 +167,6 @@ class _HomePageState extends State<HomePage> {
 SvgPicture.asset(imagePage.person1),
          SizedBox(width: width*0.05,)
        ],
-
      ),
 body: Stack(
 
@@ -206,8 +205,7 @@ body: Stack(
                       height: width*0.02,
                       width: width*0.02,
                                        ),
-                  // suffixText: "dfgg",
-                  // prefixText: "gfxs",
+                  //
                   labelText: "What you are looking for?",
                   labelStyle: TextStyle(
                     fontSize: width*0.05,
@@ -222,10 +220,12 @@ body: Stack(
 
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.grey,
+                      color: colorPage.secondaryColor
+
+
 
                     ),
-                    borderRadius: BorderRadius.circular(width*0.03),
+                    borderRadius: BorderRadius.circular(width*0.045),
                     //
                   ),
                 )
@@ -253,7 +253,7 @@ body: Stack(
     child: SingleChildScrollView(
     // controller: _scrollController,
     child: Padding(
-      padding:  EdgeInsets.only(left: width*0.02,),
+      padding:  EdgeInsets.only(left: width*0.02,right: width*0.02),
       child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -280,7 +280,7 @@ body: Stack(
       borderRadius: BorderRadius.circular(width*0.05),
       // color: Colors.pink,
       image: DecorationImage(
-      image: AssetImage(images[index]), fit: BoxFit.fill)),
+      image: AssetImage(images[index]), fit: BoxFit.cover)),
       );
       }
       ),
@@ -299,8 +299,10 @@ body: Stack(
         ),
         Text("Menu",style: TextStyle(
           fontSize: width*0.06,
-          fontWeight: FontWeight.w600
+          fontWeight: FontWeight.w600,
+
         ),),
+        SizedBox(width: width*0.02,),
         Container(
           height: width * 0.37,
           width: width * 1,
@@ -329,13 +331,12 @@ body: Stack(
                                 fit: BoxFit.fill),
                           ),
                         ),
-                        Padding(
-                          padding:  EdgeInsets.only(left: width*0.03),
-                          child: Text(def[index]["text"],
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500
-                          ),),
+                        Text(def[index]["text" ],
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: width*0.04,
                         ),
+                        textAlign: TextAlign.center),
 
 
                       ],
@@ -347,8 +348,9 @@ body: Stack(
           ),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Best seller",
+            Text("Best selling",
               style: TextStyle(
                   fontSize: width*0.06,
                   fontWeight: FontWeight.w600
@@ -411,7 +413,7 @@ body: Stack(
                                   style: TextStyle(
                                     // color: colorPage.primaryColor,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: width*0.04
+                                      fontSize: width*0.03
                                   ),
                                 ),
                                 SizedBox(width: width*0.04,),
