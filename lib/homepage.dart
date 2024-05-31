@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
              Text("current Location",
              style: TextStyle(
                color: colorPage.secondaryColor,
-               fontSize: width*0.035,
+               fontSize: width*0.037,
              ),),
              Row(
                mainAxisAlignment: MainAxisAlignment.start,
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                      color: colorPage.secondaryColor,)),
                  Text("Marina Twin tower,Lusail",
                  style: TextStyle(
-                   fontSize: width*0.035,
+                   fontSize: width*0.04,
                    color: colorPage.secondaryColor
                  ),)
                ],
@@ -162,9 +162,12 @@ class _HomePageState extends State<HomePage> {
            ],
          ),
        ),
+       leading: null,
        actions: [
-SvgPicture.asset(imagePage.person1)
+SvgPicture.asset(imagePage.person1),
+         SizedBox(width: width*0.05,)
        ],
+
      ),
 body: Stack(
 
@@ -176,7 +179,7 @@ body: Stack(
         Padding(
           padding:  EdgeInsets.only(left: width*0.04,right: width*0.04),
           child: Container(
-            height: width*0.12,
+            height: width*0.15,
             width: width*0.02,
             child: TextFormField(
                 keyboardType: TextInputType.text,
@@ -209,7 +212,7 @@ body: Stack(
                   labelStyle: TextStyle(
                     fontSize: width*0.05,
                     fontWeight: FontWeight.w400,
-                    color: Colors.black,
+                    color: colorPage.eightColor,
 
                   ),
                   border: OutlineInputBorder(
