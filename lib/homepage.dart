@@ -329,7 +329,7 @@ body: Stack(
                       children: [
                         Container(
                           height: width * 0.25,
-                          width: width * 0.25,
+                          width: width * 0.3,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(width*0.03),
                             image: DecorationImage(

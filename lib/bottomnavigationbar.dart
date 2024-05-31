@@ -36,8 +36,9 @@ class _BottomnavigationPageState extends State<BottomnavigationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[selectedindex],
+
       bottomNavigationBar: GNav(
-         gap: 2,
+         gap: 8,
         tabBackgroundColor: colorPage.primaryColor,
         onTabChange: (index){
           print(index);
