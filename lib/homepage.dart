@@ -274,7 +274,7 @@ body: Stack(
       itemBuilder: (BuildContext context, int index, int realIndex) {
         return Container(
       height: width * 0.50,
-      width: width * 1,
+      width: width * 1.5,
       margin: EdgeInsets.all(width * 0.03),
       decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(width*0.05),
