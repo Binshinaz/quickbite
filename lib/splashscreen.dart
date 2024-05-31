@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
           image: DecorationImage(image:
          AssetImage(imagePage.food1),fit: BoxFit.cover,),
           ),
-        child: Image.asset(imagePage.),
+        child: Image.asset(imagePage.images1),
           ),
 
 //       SingleChildScrollView(

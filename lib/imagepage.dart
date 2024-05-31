@@ -32,4 +32,5 @@ class imagePage{
   static const greyheart1="assets/images/greyheart.png";
   static const pinkarrow1="assets/images/pinkarrow.png";
   static const blackarrow1="assets/images/blackarrow.jpg";
+  static const images1="assets/images/images.jpg";
 }
