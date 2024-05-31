@@ -305,7 +305,7 @@ body: Stack(
         SizedBox(height: width*0.02,),
         Container(
           height: width * 0.37,
-          width: width * 1,
+          width: width * 1.2,
           color:colorPage.secondaryColor,
           child: ListView.builder(
             itemCount: def.length,
@@ -399,7 +399,7 @@ body: Stack(
                           children: [
                             Container(
                               height: width * 0.3,
-                              width: width * 0.6,
+                              width: width * 0.7,
                               decoration: BoxDecoration(
                                 image: DecorationImage(image: AssetImage(abc[index]["image"]),fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(width*0.05),
