@@ -19,7 +19,7 @@ class _CategoryPageState extends State<CategoryPage> {
   int selectedindex=0;
   List bin=[{
     "pic":"assets/images/fillet.png",
-    "name":"fish fillet",
+    "name":"Fish fillet",
     "price":"23 QR",
     "category":"Go Crispy Original",
     "des":" fishgrill,mayonise, drink",
@@ -32,28 +32,28 @@ class _CategoryPageState extends State<CategoryPage> {
       "category":"Go Crispy Original",
       "star":"4.5",    },
     {"pic":"assets/images/french.png",
-      "name":" french fries",
+      "name":" French fries",
       "price":"10 QR",
       "category":"Go Crispy Original",
       "des":"french fries,mayonise,drink",
       "star":"4.0",
     },
     {"pic":"assets/images/kfc.jpg",
-      "name":" kfc",
+      "name":" Kfc",
       "price":"40 QR",
       "category":"Bucket Meal",
       "des":"12 piece chicken,drink",
       "star":"4.0",
     },
     {"pic":"assets/images/meals.png",
-      "name":" meals",
+      "name":" Meals",
       "price":"30 QR",
       "category":"Extreme Meal",
       "des":"upperi,payasam,",
       "star":"5.0",
     },
     {"pic":"assets/images/kids.png",
-      "name":" mixed fruits",
+      "name":" Mixed fruits",
       "price":"20 QR",
       "category":"Kids Meals",
       "des":"banana, bread,apple,oats,drink",
@@ -83,6 +83,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: colorPage.secondaryColor,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -132,11 +133,12 @@ class _CategoryPageState extends State<CategoryPage> {
                       width: width*0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(width*0.03),
-                        border: Border.all(color: colorPage.seventhColor),
-                        color: selectedindex==index?colorPage.primaryColor:colorPage.seventhColor,
+                        border: Border.all(color: colorPage.eleColor),
+                        color: selectedindex==index?colorPage.primaryColor:colorPage.eleColor,
                       ),
                       child: Center(child: Text(iteams[index],
-                        style: TextStyle(color: colorPage.secondaryColor,fontSize: width*0.045),)),
+                        style: TextStyle(color: selectedindex==index?colorPage.secondaryColor:colorPage.fifthColor,fontSize: width*0.04,
+                        fontWeight: FontWeight.w600),)),
                     ),
                   );
                 },
@@ -162,22 +164,24 @@ class _CategoryPageState extends State<CategoryPage> {
                                   width: width*0.9,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(width*0.03),
-                                    color: colorPage.secondaryColor,
-                                    border: Border.all(color: colorPage.seventhColor)
+                                    color: colorPage.tenthColor,
+
 
                                   ),
                                   child: Row(
                                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Container(
-                                          height: width*0.32,
-                                          width: width*0.28,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(width*0.05),
-                                          ),
-                                          child: Image(
-                                            image:AssetImage(selectedindex==0?bin[index]["pic"]:cat[index]["pic"]),
-                                            fit: BoxFit.cover,)),
+                                        height: width*0.32,
+                                        width: width*0.28,
+                                        decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          borderRadius: BorderRadius.circular(width*0.05),
+                                          image: DecorationImage(
+                                            image: AssetImage(selectedindex==0?bin[index]["pic"]:cat[index]["pic"]),fit: BoxFit.cover
+                                          )
+                                        ),
+                                      ),
 
                                       SizedBox(width: width*0.03,),
                                       Column(
@@ -189,7 +193,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                               Text(selectedindex==0?bin[index]["name"]:cat[index]["name"],
                                                 style: TextStyle(color: Colors.black,
                                                 fontWeight: FontWeight.w800,
-                                                fontSize: width*0.06),),
+                                                fontSize: width*0.055),),
 
                                             ],
                                           ),
@@ -244,8 +248,8 @@ taped[index]=!taped[index];
 
 
                                         child: Container(
-                                          height:width*0.03,
-                                            width:width*0.03,
+                                          height:width*0.04,
+                                            width:width*0.04,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(!taped[index]?imagePage.greyheart1:imagePage.redheart1)

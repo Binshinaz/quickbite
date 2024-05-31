@@ -12,5 +12,9 @@ class colorPage{
   static const seventhColor=Color(0xFFB3B3B3
   );
   static const ninethColor=Color(0xFFEDEDED);
+  static const tenthColor=Color(0xFFFAFAFA
+  );
+  static const eleColor=Color(0xFFF6F6F6
+  );
 
 }
