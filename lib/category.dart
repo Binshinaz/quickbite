@@ -88,11 +88,16 @@ class _CategoryPageState extends State<CategoryPage> {
         elevation: 0,
         centerTitle: true,
         // backgroundColor: colo.primaryColor,
-        leading:Container(
-          height: width*0.2,
-          width: width*0.2,
-          child: Icon(Icons.arrow_back_ios_new_outlined)
+        leading:InkWell(
+onTap: (){
+   Navigator.pop(context);
+},
+          child: Container(
+            height: width*0.2,
+            width: width*0.2,
+            child: Icon(Icons.arrow_back_ios_new_outlined)
 
+          ),
         ),
         title: Text("All categories",
           style: TextStyle(

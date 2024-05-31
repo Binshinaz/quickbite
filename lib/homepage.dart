@@ -21,9 +21,10 @@ class _HomePageState extends State<HomePage> {
   List save=[];
   // List<bool>taped=List.generate(6, (index) => false);
 
-  int _selectedIndex = -1;
+  // int _selectedIndex = -1;
   bool checkbox=false;
-
+  bool grid=false;
+  TextEditingController searchController=TextEditingController();
   int count=0;
   List bin=[{
   "pic":"assets/images/fillet.png",
@@ -43,13 +44,7 @@ class _HomePageState extends State<HomePage> {
 "des":"french fries,mayonise,drink",
 "star":"4.0",
 },
-
   ];
-  // final ScrollController _scrollController = ScrollController();
-    // final double _scrollThreshold = 200.0;
-  bool grid=false;
-  TextEditingController searchController=TextEditingController();
-
   List abc=[{
     "image":"assets/images/food1.png",
      "name":"chiken burger",
@@ -483,7 +478,7 @@ body: Stack(
                            return StatefulBuilder(
                              builder: (context, setState) {
                                return Container(
-                                 height: width*1.6,
+                                 height: width*1.2,
                                  width: width*1,
                                  child: SingleChildScrollView(
                                    child: Column(
@@ -1008,7 +1003,7 @@ style: TextStyle(
                           return StatefulBuilder(
                             builder: (context, setState) {
                               return Container(
-                                height: width*1.6,
+                                height: width*1.2,
                                 width: width*1,
                                 child: SingleChildScrollView(
                                   child: Column(
