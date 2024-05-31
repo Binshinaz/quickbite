@@ -37,7 +37,7 @@ class _BottomnavigationPageState extends State<BottomnavigationPage> {
     return Scaffold(
       body: pages[selectedindex],
       bottomNavigationBar: GNav(
-        // gap: 2,
+         gap: 2,
         tabBackgroundColor: colorPage.primaryColor,
         onTabChange: (index){
           print(index);
