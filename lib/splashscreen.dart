@@ -30,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
         width: width*1,
         decoration: BoxDecoration(
           image: DecorationImage(image:
-         AssetImage(imagePage.images1),fit: BoxFit.cover,),
+         AssetImage(imagePage.splashimage1),fit: BoxFit.cover,),
           ),
 
           ),
