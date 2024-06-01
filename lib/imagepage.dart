@@ -37,4 +37,7 @@ class imagePage{
   static const splashimage1="assets/images/splashimage.jpg";
   static const spimg1="assets/images/spimg.jpg";
   static const fr1="assets/images/fr.jpg";
+  static const loaded1="assets/images/loaded.jpg";
+  static const pop1="assets/images/pop.jpg";
+  static const bur1="assets/images/bur.jpg";
 }

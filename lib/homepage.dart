@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
 
     List images = [
         "assets/images/food1.png",
-        "assets/images/food2.png",
+        "assets/images/loaded.jpg",
         "assets/images/food3.png",
         "assets/images/food4.jpg",
     ];
@@ -247,7 +247,7 @@ body: Stack(
     left: 0,
     right: 0,
     child: Container(
-    height: width*1.1,
+     height: height*0.64,
     decoration: BoxDecoration(
     color: colorPage.secondaryColor,
     borderRadius: BorderRadius.only(
