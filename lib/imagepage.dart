@@ -40,4 +40,5 @@ class imagePage{
   static const loaded1="assets/images/loaded.jpg";
   static const pop1="assets/images/pop.jpg";
   static const bur1="assets/images/bur.jpg";
+  static const first1="assets/images/first.png";
 }
