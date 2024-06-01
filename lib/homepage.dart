@@ -247,7 +247,7 @@ body: Stack(
     left: 0,
     right: 0,
     child: Container(
-     height: height*0.8,
+     height: height*0.74,
     decoration: BoxDecoration(
     color: colorPage.secondaryColor,
     borderRadius: BorderRadius.only(
