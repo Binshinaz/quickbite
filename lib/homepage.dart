@@ -393,7 +393,7 @@ body: Stack(
               child: GridView.builder(
                   itemCount: abc.length,
                   scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(),
+                  // physics: BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount (
                       crossAxisCount: 2,
                       mainAxisSpacing: width * 0.02,
