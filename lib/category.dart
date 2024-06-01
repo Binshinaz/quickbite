@@ -177,7 +177,7 @@ onTap: (){
                                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Container(
-                                        height: width*0.32,
+                                        height: width*0.28,
                                         width: width*0.28,
                                         decoration: BoxDecoration(
                                           color: Colors.red,
